@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelTalk</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-globe"></i> TravelTalk</h1>
+    <nav>
+      <ul>
+        <li><a href="#personalization">Personalization</a></li>
+        <li><a href="#translation">Translation Tools</a></li>
+        <li><a href="#itinerary">Itinerary</a></li>
+        <li><a href="#collaboration">Collaboration</a></li>
+        <li><a href="#additional">Additional Features</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Personalization Features Section -->
+    <section id="personalization">
+      <h2>Personalization Features</h2>
+      <form id="personalization-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+
+        <label for="preferences">Travel Preferences:</label>
+        <input type="text" id="preferences" name="preferences" placeholder="e.g., Adventure, Beaches">
+
+        <label for="language">Language:</label>
+        <select id="language" name="language">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+        </select>
+
+        <label for="budget">Budget Range:</label>
+        <input type="number" id="budget" name="budget" placeholder="Enter your budget">
+
+        <label for="interests">Interests:</label>
+        <input type="text" id="interests" name="interests" placeholder="e.g., History, Food">
+
+        <button type="submit"><i class="fas fa-save"></i> Save</button>
+      </form>
+    </section>
+
+    <!-- Translation Tools Section -->
+    <section id="translation">
+      <h2>Translation Tools</h2>
+      <button onclick="translateText()"><i class="fas fa-language"></i> Real-Time Translation</button>
+      <button onclick="speechToText()"><i class="fas fa-microphone"></i> Speech-to-Text</button>
+      <button onclick="detectLanguage()"><i class="fas fa-search"></i> Detect Language</button>
+      <button onclick="showPronunciation()"><i class="fas fa-volume-up"></i> Pronunciation Guide</button>
+      <button onclick="enableOfflineMode()"><i class="fas fa-download"></i> Offline Mode</button>
+    </section>
+
+    <!-- Itinerary Generation Section -->
+    <section id="itinerary">
+      <h2>Itinerary Generation</h2>
+      <form id="itinerary-form">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" placeholder="Enter destination">
+
+        <label for="duration">Duration (days):</label>
+        <input type="number" id="duration" name="duration" placeholder="e.g., 7">
+
+        <button type="button" onclick="generateItinerary()"><i class="fas fa-map"></i> Generate Itinerary</button>
+      </form>
+    </section>
+
+    <!-- Collaboration Features Section -->
+    <section id="collaboration">
+      <h2>Collaboration Features</h2>
+      <button onclick="shareTrip()"><i class="fas fa-share-alt"></i> Share Trip</button>
+      <button onclick="planGroupTrip()"><i class="fas fa-users"></i> Plan Group Trip</button>
+      <button onclick="inviteFriends()"><i class="fas fa-user-plus"></i> Invite Friends</button>
+    </section>
+
+    <!-- Additional Functionalities Section -->
+    <section id="additional">
+      <h2>Additional Functionalities</h2>
+      <button onclick="discoverEvents()"><i class="fas fa-calendar-alt"></i> Discover Events</button>
+      <button onclick="recommendRestaurants()"><i class="fas fa-utensils"></i> Recommend Restaurants</button>
+      <button onclick="provideCulturalInsights()"><i class="fas fa-info-circle"></i> Cultural Insights</button>
+      <button onclick="translateEmergencyPhrases()"><i class="fas fa-first-aid"></i> Emergency Phrases</button>
+      <button onclick="convertCurrency()"><i class="fas fa-dollar-sign"></i> Currency Conversion</button>
+      <button onclick="guideTransportation()"><i class="fas fa-bus"></i> Transportation Guides</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TravelTalk. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
