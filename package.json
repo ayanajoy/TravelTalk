@@ -1,11 +1,12 @@
 {
   "name": "traveltalk",
   "version": "1.0.0",
-  "description": "",
+  "description": "A travel planning app with collaboration features",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "start": "node main.js",
+    "dev": "nodemon main.js"  // Adds a development script for nodemon
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.0.0", // Added dotenv for environment variable management
+    "nodemon": "^2.0.20"  // Added nodemon for hot-reloading during development
   }
 }
