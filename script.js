@@ -61,3 +61,21 @@ document.querySelector('.form-container.sign-in form button').addEventListener('
         alert('Please enter email and password.');
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const loginButton = document.getElementById('login');
+    const registerButton = document.getElementById('register');
+    const signUpForm = document.querySelector('.form-container.sign-up');
+    const signInForm = document.querySelector('.form-container.sign-in');
+    const container = document.getElementById('container');
+
+    // Function to toggle forms
+    const toggleForms = () => {
+        signUpForm.classList.toggle('active');
+        signInForm.classList.toggle('active');
+        container.classList.toggle('active');
+    };
+
+    // Event listeners for the buttons
+    loginButton.addEventListener('click', toggleForms);
+    registerButton.addEventListener('click', toggleForms);
+});
