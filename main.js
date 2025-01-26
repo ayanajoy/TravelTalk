@@ -1,7 +1,9 @@
-// Collaboration Features
-
-// Trip Sharing: Generate a shareable link for the trip
-function shareTrip() {
+// Check if the code is running in the browser environment
+if (typeof document !== "undefined") {
+  // Collaboration Features
+  
+  // Trip Sharing: Generate a shareable link for the trip
+  function shareTrip() {
     const tripDetails = {
       destination: document.getElementById("destination").value,
       duration: document.getElementById("duration").value,
@@ -121,8 +123,9 @@ function shareTrip() {
       alert("Please provide a location to fetch transportation options.");
     }
   }
-// Intersection Observer to trigger animation when elements come into view
-document.addEventListener("DOMContentLoaded", () => {
+
+  // Intersection Observer to trigger animation when elements come into view
+  document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll('.image-container img, section');  // Select both images and sections
   
     const observerOptions = {
@@ -146,8 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
     elements.forEach(element => observer.observe(element)); // Observe each element
   });
-    // Scroll Animation Logic
-document.addEventListener('DOMContentLoaded', () => {
+
+  // Scroll Animation Logic
+  document.addEventListener('DOMContentLoaded', () => {
     const scrollElements = document.querySelectorAll('.scroll-reveal');
   
     const elementInView = (el, offset = 100) => {
@@ -178,4 +182,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check
     handleScrollAnimation();
   });
-  
+}
