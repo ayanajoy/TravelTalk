@@ -21,7 +21,7 @@ function shareTrip() {
     const groupTrip = {
       destination: document.getElementById("destination").value,
       duration: document.getElementById("duration").value,
-      members: ["John", "Jane", "Ayana"], // Example of group members (could be dynamically added)
+      members: ["John", "Jane", "Sam"], // Example of group members (could be dynamically added)
     };
     
     if (groupTrip.destination && groupTrip.duration) {
