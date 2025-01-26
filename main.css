@@ -128,4 +128,37 @@ body {
   footer p {
     margin: 0;
   }
-  
+  /* Image animation: fade-in and slide-up */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+img {
+  animation: fadeSlideIn 1s ease-out;
+  /* Optional: Set a delay if you want images to appear one after the other */
+  animation-delay: 0.5s;
+  /* Add transition for smooth effect on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05); /* Optional: Zoom effect on hover */
+}
+/* Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
