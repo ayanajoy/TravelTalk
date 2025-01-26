@@ -1,27 +1,4 @@
-const container = document.getElementById('container');
-const registerBtn = document.getElementById('register');
-const loginBtn = document.getElementById('login');
-
-registerBtn.addEventListener('click', () => {
-    container.classList.add("active");
-});
-
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
-});
-document.querySelector('.form-container.sign-in form button').addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent default form submission
-  
-  const email = document.querySelector('.form-container.sign-in input[placeholder="Email"]').value;
-  const password = document.querySelector('.form-container.sign-in input[placeholder="Password"]').value;
-
-  if (email && password) {
-      // If all fields are filled, navigate to main page
-      window.location.href = 'main.html';
-  } else {
-      alert('Please enter email and password');
-  }
-});
+// Signup functionality
 document.querySelector('.form-container.sign-up form button').addEventListener('click', async function(event) {
     event.preventDefault();
 
@@ -38,11 +15,10 @@ document.querySelector('.form-container.sign-up form button').addEventListener('
             });
 
             if (response.ok) {
-                alert('Signup successful! Please log in.');
-                container.classList.remove("active"); // Switch to sign-in form
+                alert('Signup successful! You can now log in.');
             } else {
                 const data = await response.json();
-                alert(data.message);
+                alert(data.message); // Display error from backend
             }
         } catch (error) {
             console.error('Error:', error);
@@ -52,6 +28,8 @@ document.querySelector('.form-container.sign-up form button').addEventListener('
         alert('Please fill in all fields.');
     }
 });
+
+// Sign-in functionality
 document.querySelector('.form-container.sign-in form button').addEventListener('click', async function(event) {
     event.preventDefault();
 
@@ -69,11 +47,11 @@ document.querySelector('.form-container.sign-in form button').addEventListener('
             if (response.ok) {
                 const data = await response.json();
                 alert('Login successful!');
-                window.localStorage.setItem('token', data.token); // Store token in localStorage
+                localStorage.setItem('token', data.token); // Save token for later use
                 window.location.href = 'main.html'; // Navigate to main page
             } else {
                 const data = await response.json();
-                alert(data.message);
+                alert(data.message); // Display error from backend
             }
         } catch (error) {
             console.error('Error:', error);
