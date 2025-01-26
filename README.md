@@ -6,7 +6,7 @@
 - **Gayathri K** - Vidya Academy of Science and Technology
 - **Ayana Joy** - Vidya Academy of Science and Technology
 
-**Hosted Project Link:** [Add your hosted project link here]
+**Hosted Project Link:** (https://drive.google.com/file/d/1JiJypSKi-xDw0HrZ0AtwCr1vJ4Q6J8xb/view?usp=sharing)
 
 ## Project Description
 TravelTalk is a one-stop platform for travelers that offers personalized trip planning, real-time translation tools, and seamless collaboration features. It is designed to simplify travel and make the journey more enjoyable and efficient.
