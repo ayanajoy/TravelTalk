@@ -1,45 +1,48 @@
-// Collaboration Features
+// Check if the code is running in the browser environment
+if (typeof document !== "undefined") {
 
-// Trip Sharing: Generate a shareable link for the trip
-function shareTrip() {
+  // Collaboration Features
+
+  // Trip Sharing: Generate a shareable link for the trip
+  function shareTrip() {
     const tripDetails = {
       destination: document.getElementById("destination").value,
       duration: document.getElementById("duration").value,
     };
-    
+
     if (tripDetails.destination && tripDetails.duration) {
-      const tripLink = `http://example.com/share-trip?destination=${tripDetails.destination}&duration=${tripDetails.duration}`;
+      const tripLink = `http://example.com/share-trip?destination=${encodeURIComponent(tripDetails.destination)}&duration=${encodeURIComponent(tripDetails.duration)}`;
       alert(`Your trip can be shared using the link: ${tripLink}`);
       // Optionally, save trip details in a cloud backend for real sharing (e.g., Firebase, AWS)
     } else {
       alert("Please complete the trip details before sharing.");
     }
   }
-  
-  // Plan Group Trip: Basic simulation of planning a group trip (you could use Firebase or backend storage for real-time updates)
+
+  // Plan Group Trip: Basic simulation of planning a group trip
   function planGroupTrip() {
     const groupTrip = {
       destination: document.getElementById("destination").value,
       duration: document.getElementById("duration").value,
       members: ["John", "Jane", "Sam"], // Example of group members (could be dynamically added)
     };
-    
+
     if (groupTrip.destination && groupTrip.duration) {
       alert(`Planning group trip to ${groupTrip.destination} for ${groupTrip.duration} days with: ${groupTrip.members.join(', ')}`);
     } else {
       alert("Please complete the trip details before planning the group trip.");
     }
   }
-  
+
   // Invite Friends: Sending trip details via email (simulating with a prompt)
   function inviteFriends() {
     const tripDetails = {
       destination: document.getElementById("destination").value,
       duration: document.getElementById("duration").value,
     };
-    
+
     const friendsEmails = prompt("Enter the email addresses of friends (comma separated):");
-    
+
     if (friendsEmails && tripDetails.destination && tripDetails.duration) {
       alert(`Inviting friends: ${friendsEmails} to join the trip to ${tripDetails.destination} for ${tripDetails.duration} days.`);
       // You can send an actual email using an email API (like SendGrid, Mailgun, or SES)
@@ -47,9 +50,9 @@ function shareTrip() {
       alert("Please fill in the trip details and enter at least one email.");
     }
   }
-  
+
   // Additional Functionalities
-  
+
   // Discover Events: Use Eventbrite API or similar service (for simplicity, using a placeholder)
   function discoverEvents() {
     const location = prompt("Enter the city or location to discover events:");
@@ -61,7 +64,7 @@ function shareTrip() {
       alert("Please provide a location to discover events.");
     }
   }
-  
+
   // Recommend Restaurants: Use Yelp API or a similar service
   function recommendRestaurants() {
     const location = prompt("Enter your location to find restaurants:");
@@ -73,7 +76,7 @@ function shareTrip() {
       alert("Please provide a location to recommend restaurants.");
     }
   }
-  
+
   // Provide Cultural Insights: Simple placeholder for now
   function provideCulturalInsights() {
     const destination = document.getElementById("destination").value;
@@ -84,7 +87,7 @@ function shareTrip() {
       alert("Please enter a destination to get cultural insights.");
     }
   }
-  
+
   // Translate Emergency Phrases: Placeholder for translation of emergency phrases
   function translateEmergencyPhrases() {
     const phrase = prompt("Enter emergency phrase to translate:");
@@ -95,7 +98,7 @@ function shareTrip() {
       alert("Please enter a phrase to translate.");
     }
   }
-  
+
   // Currency Conversion: Use a currency conversion API (e.g., Open Exchange Rates or Currency Layer)
   function convertCurrency() {
     const amount = prompt("Enter amount to convert:");
@@ -109,7 +112,7 @@ function shareTrip() {
       alert("Please provide all conversion details.");
     }
   }
-  
+
   // Guide Transportation: Placeholder for transportation guides
   function guideTransportation() {
     const location = prompt("Enter your location for transportation guide:");
@@ -121,16 +124,17 @@ function shareTrip() {
       alert("Please provide a location to fetch transportation options.");
     }
   }
-// Intersection Observer to trigger animation when elements come into view
-document.addEventListener("DOMContentLoaded", () => {
+
+  // Intersection Observer to trigger animation when elements come into view
+  document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll('.image-container img, section');  // Select both images and sections
-  
+
     const observerOptions = {
       root: null, // Use the viewport as the root
       rootMargin: "0px", // No margin
       threshold: 0.5, // Trigger animation when 50% of the element is in view
     };
-  
+
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -143,26 +147,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }, observerOptions);
-  
+
     elements.forEach(element => observer.observe(element)); // Observe each element
   });
-    // Scroll Animation Logic
-document.addEventListener('DOMContentLoaded', () => {
+
+  // Scroll Animation Logic
+  document.addEventListener('DOMContentLoaded', () => {
     const scrollElements = document.querySelectorAll('.scroll-reveal');
-  
+
     const elementInView = (el, offset = 100) => {
       const elementTop = el.getBoundingClientRect().top;
       return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
     };
-  
+
     const displayScrollElement = (element) => {
       element.classList.add('visible');
     };
-  
+
     const hideScrollElement = (element) => {
       element.classList.remove('visible');
     };
-  
+
     const handleScrollAnimation = () => {
       scrollElements.forEach((el) => {
         if (elementInView(el)) {
@@ -172,10 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     };
-  
+
     window.addEventListener('scroll', handleScrollAnimation);
-  
+
     // Initial check
     handleScrollAnimation();
   });
-  
+}

@@ -79,3 +79,5 @@ document.addEventListener('DOMContentLoaded', function () {
     loginButton.addEventListener('click', toggleForms);
     registerButton.addEventListener('click', toggleForms);
 });
+const apiUrl = "https://travel-backend.onrender.com/";
+const apiUrl = `${process.env.REACT_APP_API_URL}/signin`;
